@@ -1,8 +1,13 @@
 import http from "http";
 
-http
-  .createServer((req, res) => {
+const server = http.createServer((req, res) => {
+  if (req.url === "/more") {
+    res.write("test more");
+    res.end();
+  } else {
     res.write("Hello from node");
     res.end();
-  })
-  .listen(5500, () => console.log("Server is on..."));
+  }
+});
+
+server.listen(5500, () => console.log("Server is on..."));
