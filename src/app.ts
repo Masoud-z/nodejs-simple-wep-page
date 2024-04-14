@@ -1,8 +1,14 @@
-import Person from "./person";
+import Logger from "./logger";
 
-const person = new Person("Masoud", 27);
+interface MessageParams {
+  id: string;
+  msg: string;
+}
 
-person.greeting();
+const logger = new Logger();
 
-console.log(__dirname);
-console.log(__filename);
+logger.on("message", ({ id, msg }) => {
+  console.log(id, msg);
+});
+
+logger.log("Test the message");
