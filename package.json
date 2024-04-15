@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index",
+    "dev": "nodemon dist/index"
   },
   "author": "Masoud Zin",
   "license": "MIT",
